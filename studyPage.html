@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .topnav {
+            top: 50%;
+            left: 50%;
+            overflow: hidden;
+            background-color: #8B4513;
+        }
+
+        .topnav a.active {
+            background-color: #FDF5E6;
+            color: #8B4513;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #FDF5E6;
+            color: #8B4513;
+        }
+
+        .content {
+            /* border: 3px solid #73AD21; */
+            padding: 10px 50px 10px 50px;
+        }
+
+        .main {
+            display: flex;
+            justify-content: start;
+        }
+
+        .sidenav-study {
+            width: 30%;
+            margin-right: 5%;
+        }
+
+        .content-study {
+            width: 65%;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            background-color: #FAEBD7;
+            border-radius: 60px;
+            height: 50px;
+            width: 100%;
+            margin: 0px 0px 20px 0px;
+        }
+
+        .card-container {
+            margin: auto;
+            text-align: center;
+            left: 50%;
+            padding: 13px;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            background-color: #DCDCDC;
+        }
+
+        .header {
+            font-size: 26px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        p.one {
+            word-spacing: 160px;
+        }
+
+        input[type=number],
+        select {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type=submit] {
+            width: 10%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="/Home.html">หน้าหลัก</a>
+        <a href="/healtyPage.html">สุขภาพ</a>
+        <a href="/dailyLifePage.html">ชีวิตประจำวัน</a>
+        <a href="/sciencePage.html">วิทยาศาสตร์</a>
+        <a class="active" href="/studyPage.html">การศึกษา</a>
+    </div>
+    <div class="content">
+        <div>
+            <h1>การศึกษา</h1>
+        </div>
+        <div class="main">
+            <div class="sidenav-study">
+                <div class="card" onclick="activeFunction('grade')">
+                    <div class="card-container">คำนวณเกรด</div>
+                </div>
+            </div>
+            <div class="content-study">
+                <div id="grade" class="hidden">
+                    <div class="header"> คำนวณเกรด</div> <br>
+                    <div>
+                        <b>
+                            <p class="one">คะแนน</p>
+                        </b>
+                    </div>
+                    <div>
+                        <form onsubmit="calculateGrade(); return false;">
+                            <input type="number" id="score" name="score" required>
+                            <button type="submit">คำนวณ</button>
+                        </form>
+                        <br><br>
+                        <h1><p id="result"></p></h1>
+                        <h2><p id="result1"></p></h2>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="ScriptStudy.js"></script>
+</html>
